@@ -1,0 +1,17 @@
+{
+  "name": "totempoll",
+  "description": "Tinder for yes, no questions",
+  "main": "server/server.js",
+  "authors": [
+    "Sergey Piterman"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
