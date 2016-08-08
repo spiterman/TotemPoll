@@ -12,6 +12,7 @@ module.exports = function(app, express){
   app.use(cors());
   // app.use(morgan('combined'));
   app.use(express.static(path.join(__dirname, '/../../client')));
+  app.use(express.static(path.join(__dirname, '/../../node_modules')));
 
   var profileRouter = express.Router();
 
