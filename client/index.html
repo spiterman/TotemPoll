@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="build/styles/app.css">
   </head>
   <body ng-controller="mainController">
   <div ng-cloak>
@@ -12,6 +16,7 @@
 
     <div ui-view>
     </div>
+    <test-directive></test-directive>
 
     <!-- Bower Components -->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -23,7 +28,7 @@
     <script src="app.js"></script>
 
     <script src="components/profile/profileController.js"></script>
-    <script src="components/profile/profileModel.js"></script>
+    <script src="components/profile/profileFactory.js"></script>
 
   </body>
 </html>
