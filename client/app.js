@@ -1,11 +1,12 @@
 var app = angular.module("app", [
   'ui.router',
+  'ui.bootstrap',
   'app.profile'
   ]);
 
 app.controller("mainController", function($scope){
   $scope.name = "Hydra";
-})
+});
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
@@ -17,4 +18,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
       url: '/profile'
     })
 
-}])
+}]);
+
+app.directive('testDirective', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'components/custom_directives/test/test.html'
+  }
+})
+
+
