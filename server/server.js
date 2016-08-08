@@ -1,12 +1,15 @@
 'use strict'
 
-const express = require('express');
+var express = require('express');
+var http = require('http');
+var app = express();
+var server = http.createServer(app);
+var port = process.env.PORT || 3000;
+var middleware = require('./config/middleware');
 
-const app = express();
-const port = process.env.PORT || 3000;
+middleware(app, express);
 
-app.use(express.static(__dirname + "/../client"));
-app.use(express.static(__dirname + "/../node_modules"));
+server.listen(port, function(){
+  console.log('Server listening on ', port);
+})
 
-app.listen(port);
-console.log('Server listening on ' + port);
