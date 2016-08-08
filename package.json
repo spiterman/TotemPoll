@@ -10,6 +10,18 @@
   "author": "Sergey Piterman",
   "license": "ISC",
   "dependencies": {
-    "express": "4.14.0"
+    "body-parser": "1.15.2",
+    "cors": "2.7.1",
+    "express": "4.14.0",
+    "gulp": "3.9.1",
+    "gulp-sass": "2.3.2",
+    "http": "0.0.0",
+    "morgan": "1.7.0",
+    "path": "0.12.7",
+    "rimraf": "2.5.4",
+    "run-sequence": "1.2.2"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "2.0.12"
   }
 }
