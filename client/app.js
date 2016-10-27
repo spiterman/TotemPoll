@@ -1,7 +1,8 @@
 var app = angular.module("app", [
   'ui.router',
   'ui.bootstrap',
-  'app.profile'
+  'app.profile',
+  'app.question'
   ]);
 
 app.controller("mainController", function($scope){
@@ -16,6 +17,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
       templateUrl: 'components/profile/profile.html',
       controller: 'ProfileController',
       url: '/profile'
+    })
+    .state('question', {
+      templateUrl: 'components/question/question.html',
+      controller: 'QuestionController',
+      url: '/question'
     })
 
 }]);
