@@ -4,25 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="refresh" content="3"> -->
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="build/styles/app.css">
   </head>
   <body ng-controller="mainController">
-  <div ng-cloak>
-    <h1>{{name}}</h1>
-  </div>
 
-    <div ui-view>
+    <div ng-cloak>
+      <div ui-view></div>
     </div>
-    <test-directive></test-directive>
 
     <!-- Bower Components -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 
     <!-- Main Config/routing -->
     <script src="app.js"></script>
@@ -32,6 +31,9 @@
 
     <script src="components/question/questionController.js"></script>
     <script src="components/question/questionFactory.js"></script>
+
+    <script src="components/login/loginController.js"></script>
+    <script src="components/login/loginFactory.js"></script>
 
   </body>
 </html>

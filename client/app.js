@@ -2,14 +2,15 @@ var app = angular.module("app", [
   'ui.router',
   'ui.bootstrap',
   'app.profile',
-  'app.question'
+  'app.question',
+  'app.login'
   ]);
 
 app.controller("mainController", function($scope){
-  $scope.name = "Hydra";
+
 });
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider){
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -23,6 +24,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
       controller: 'QuestionController',
       url: '/question'
     })
+    .state('comment', {
+      templateUrl: 'components/comment/comment.html',
+      controller: 'CommentController',
+      url: '/comment'
+    })
+    .state('login', {
+      templateUrl: 'components/login/login.html',
+      controller: 'LoginController',
+      url: '/login'
+    });
+
 
 }]);
 
