@@ -10,7 +10,7 @@ var auth = require('./auth/routes');
 
 // Database Setup
 var mongoose = require('mongoose');
-mongoose.connect(config.db.url);
+// mongoose.connect(config.db.url);
 
 // Global Middleware
 require('./middleware/appMiddleware')(app);
