@@ -1,0 +1,9 @@
+<div class="container" ng-controller="LoginController as ctrl">
+  <h3>Sign Up or Log In</h3>
+    <form>
+      <input type="text" placeholder="username" ng-model="ctrl.userData.username">
+      <input type="password" placeholder="password" ng-model="ctrl.userData.password">
+      <button class="btn btn-primary" ng-click="ctrl.signUp()">Submit</button>
+      <button class="btn btn-danger" ng-click="ctrl.signIn()">Log In</button>
+    </form>
+</div>
