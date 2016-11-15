@@ -2,18 +2,8 @@
   'use strict';
 
   angular.module('app.profile')
-    .factory('ProfileFactory', ['$http', function($http){
+    .factory('ProfileFactory', ['$http', '$state', function($http, $state){
       var model = {};
-
-      model.testGet = function(){
-        return $http({
-          method: 'GET',
-          url: '/api/profile'
-        })
-        .then(function(responseObj){
-          return responseObj;
-        });
-      };
 
       model.testPost = function(data){
         console.log(data)
@@ -27,6 +17,18 @@
           return responseObj.data;
         }, function(res){
           console.error('Error: ', res);
+        });
+      };
+
+      model.getCurrentUser = function(){
+        return request('GET', '/api/users/' + $state.params.username, null);
+      }
+
+      function request(method, url, data){
+        return $http({
+          method: method,
+          url: url,
+          data: data
         });
       };
 
