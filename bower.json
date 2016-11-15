@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.7",
     "angular-ui-router": "^0.3.1",
     "bootstrap-sass": "^3.3.7",
-    "angular-local-storage": "^0.5.2"
+    "angular-local-storage": "^0.5.2",
+    "semantic-ui-sass": "*"
   }
 }
