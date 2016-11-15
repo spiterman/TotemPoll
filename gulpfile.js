@@ -5,11 +5,17 @@ var sequence = require('run-sequence');
 var cleanCSS = require('gulp-clean-css');
 
 var paths = {
-  styles: ['client/styles/*.scss']
+  styles: ['client/styles/*.scss'],
+  scripts: []
 };
 
 gulp.task('clean', function(cb){
   rimraf('./client/build', cb);
+});
+
+gulp.task('build-min-js', function(){
+  return gulp.src(paths.scripts)
+    .pipe(gulp.dest('./client/build/scripts'));
 });
 
 gulp.task('build-min-css', function(){ //Must run anytime SCSS is updated
