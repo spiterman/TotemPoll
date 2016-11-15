@@ -1,10 +1,24 @@
 <div ng-controller="ProfileController as ctrl">
-  <div class="jumbotron profile">
-    <h1>
-      {{ ctrl.profileUser.username }}
-    </h1>
-  </div>
   <button class="btn btn-default" ng-click="ctrl.testFunc()">
     Click Me
   </button>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-xs-12 col-md-6">
+
+      <div class="thumbnail profileCard">
+        <div class="caption">
+          <h3>Name</h3>
+        </div>
+        <div class="btn-group-vertical col-md-12 profileComponents">
+          <a href="" class="btn btn-default">{{ctrl.currentUser.name}}</a>
+          <a href="" class="btn btn-default">{{ctrl.currentUser.username}}</a>
+          <a href="" class="btn btn-default">{{ctrl.currentUser.bio}}</a>
+          <a href="" class="btn btn-default">{{ctrl.currentUser.zipCode}}</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
