@@ -86,6 +86,17 @@ exports.signUp = function(req, res, next) {
   });
 };
 
+exports.getUser = function(req, res, next){
+  var username = req.params.username;
+  User.find({username: username}, '-_id', function(err, documents){
+    if(err) {
+      console.log(err);
+      return next(err);
+    }
+    res.json(documents[0]);
+  });
+};
+
 exports.delete = function(req, res, next) {
   req.user.remove(function(err, removed) {
     if (err) {
