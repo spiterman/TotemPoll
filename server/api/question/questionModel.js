@@ -10,7 +10,7 @@ var QuestionSchema = new Schema({
 
   categories: [{
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: 'category'
   }],
 
