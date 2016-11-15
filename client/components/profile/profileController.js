@@ -5,25 +5,17 @@
     .controller('ProfileController', ['ProfileFactory', function(ProfileFactory){
       var vm = this;
 
-      vm.profileUser = {};
-      vm.profileUser.username = 'SergeyP';
+      vm.currentUser = {};
 
-      vm.testFunc = function(){
-        ProfileFactory.testPost({'hello': 'world'}).then(function(responseObj){
-          vm.response = responseObj;
-        });
-      }
+      vm.getUser = function(){
+        ProfileFactory.getCurrentUser()
+          .then(function(responseObj){
+            vm.currentUser = responseObj.data;
+          });
+      };
 
-      // console.log(vm.response)
-
-      // vm.testFunc = function() {
-      //   ProfileFactory.testPost({
-      //     'hello': 'world'
-      //   })
-      //   .then(function(responseObj){
-      //     vm.response = responseObj;
-      //   });
-      // };
+      // Initialize Profile Page
+      vm.getUser();
 
     }]);
 })();

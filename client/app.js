@@ -17,7 +17,7 @@ app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider
     .state('profile', {
       templateUrl: 'components/profile/profile.html',
       controller: 'ProfileController',
-      url: '/profile'
+      url: '/profile/:username'
     })
     .state('question', {
       templateUrl: 'components/question/question.html',
