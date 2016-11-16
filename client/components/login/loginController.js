@@ -5,7 +5,7 @@
       localStorageServiceProvider
         .setPrefix('testing');
     })
-    .controller('LoginController', ['LoginFactory', 'localStorageService', function(LoginFactory, localStorageService) {
+    .controller('LoginController', ['LoginFactory', 'localStorageService', '$state', function(LoginFactory, localStorageService, $state) {
 
       var vm = this;
 
@@ -32,6 +32,10 @@
           .then(function(response){
             console.log('signed in');
             console.log(response);
+            localStorageService.set('token', response.data.token);
+          })
+          .then(function(){
+            $state.go('question');
           });
       };
 
