@@ -58,7 +58,6 @@ exports.signIn = function(req, res, next) {
     if(err){
       next(err);
     } else {
-      var user;
       documents.forEach((item) => {
         bcrypt.compare(req.body.password, item.password, function(err, success){
           if(err) { return next(err) }

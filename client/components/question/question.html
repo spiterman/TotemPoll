@@ -1,12 +1,31 @@
-<div ng-controller="QuestionController as ctrl">
-  <div class="container profile">
-    <form>
-      <label for="">Hey there</label>
-      <input type="text" ng-model="ctrl.data.name">
-      <input type="text" ng-model="ctrl.data.username">
-      <button class="btn btn-primary" ng-click="ctrl.testFunc()">
-        Click me
-      </button>
-    </form>
+<div ng-controller="QuestionController as ctrl" class="container">
+  <div class="ui fluid centerd card" >
+
+    <div class="content">
+      <div class="header">
+      Question {{ctrl.currentQuestion.content}}
+      </div>
+      <div class="description">
+        Asked by {{ctrl.currentQuestion.username}}
+      </div>
+      <div class="meta">
+        Tags {{ctrl.currentQuestion.tags}}
+      </div>
+    </div>
+
+    <div class="extra content">
+      <div class="ui three buttons">
+        <div class="ui basic red button" ng-click="ctrl.disagree()">Disagree</div>
+        <div class="ui basic grey button" ng-click="ctrl.pass()">Pass</div>
+        <div class="ui basic green button" ng-click="ctrl.agree()">Agree</div>
+      </div>
+    </div>
+
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui basic blue button" ng-click="ctrl.getComments()">Comments</div>
+      </div>
+    </div>
   </div>
 </div>
+

@@ -3,22 +3,34 @@
     .controller('QuestionController', ['QuestionFactory', function(QuestionFactory){
       var vm = this;
 
-      vm.data = {
-        name: 'sergey',
-        username: 'spiterman'
+      vm.currentQuestion = {};
+
+      vm.getComments = function(){
+        QuestionFactory.getComments()
+          .then(function(responseObj){
+            vm.comments = responseObj;
+          })
       };
 
+      vm.agree = function(){
+        QuestionFactory.agree()
+          .then(getNextQuestion);
+      };
 
-      vm.testFunc = function(){
-        // console.log(vm.data);
-        console.log('Test Func was called');
-        QuestionFactory.testPost(vm.data).then(function(responseObj){
-          vm.token = responseObj;
-          console.log(responseObj);
-        });
+      vm.pass = function(){
 
-        // vm.data.username = '';
-        // vm.data.password = '';
+      };
+
+      vm.disagree = function(){
+
+      };
+
+      function getNextQuestion(){
+        QuestionFactory.getAllQuestions()
+          .then(function(responseObj){
+            console.log(responseObj);
+            vm.currentQuestion = responseObj;
+          })
       };
 
     }]);

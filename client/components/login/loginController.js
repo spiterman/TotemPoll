@@ -28,7 +28,6 @@
       };
 
       vm.signIn = function(){
-
         LoginFactory.signIn(vm.userData)
           .then(function(response){
             console.log('signed in');
