@@ -58,11 +58,12 @@ exports.signIn = function(req, res, next) {
     if(err){
       next(err);
     } else {
-      documents.forEach((item) => {
-        bcrypt.compare(req.body.password, item.password, function(err, success){
+      documents.forEach((user) => {
+        bcrypt.compare(req.body.password, user.password, function(err, success){
           if(err) { return next(err) }
             if(success){
-              res.json(item);
+              var token = signToken(user._id);
+              res.json({token: token, user: user});
             }
         });
       });
@@ -73,15 +74,12 @@ exports.signIn = function(req, res, next) {
 exports.signUp = function(req, res, next) {
 
   var newUser = new User(req.body);
-  console.log(newUser);
   newUser.save(function(err, user) {
     if(err) {
-      console.log(err);
       return next(err);
     }
-
     var token = signToken(user._id);
-    res.json({token: token});
+    res.json({token: token, user: user});
   });
 };
 
