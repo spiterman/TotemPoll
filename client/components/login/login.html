@@ -1,52 +1,44 @@
-<!-- <div class="container" ng-controller="LoginController as ctrl">
-  <h3>Sign Up or Log In</h3>
-    <form>
-      <input type="text" placeholder="username" ng-model="ctrl.userData.username">
-      <input type="password" placeholder="password" ng-model="ctrl.userData.password">
-      <button class="btn btn-primary" ng-click="ctrl.signUp()">Submit</button>
-      <button class="btn btn-danger" ng-click="ctrl.signIn()">Log In</button>
-    </form>
-</div> -->
-
 <div class="container" ng-controller="LoginController as ctrl">
-<div class="ui middle aligned center aligned grid">
-  <div class="column">
-    <h2 class="ui blue image header">
-      <div class="content">
-        Log-in to your account
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui blue image header">
+        <div class="content">
+          Log-in to your account
+        </div>
+      </h2>
+      <form class="ui large form">
+        <div class="ui stacked segment">
+
+          <div class="field">
+            <div class="ui left input">
+              <input type="text" name="name" placeholder="Full Name" ng-model="ctrl.userData.name">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="ui left input">
+              <input type="text" name="username" placeholder="Username" ng-model="ctrl.userData.username">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="ui left input">
+              <input type="password" name="password" placeholder="Password" ng-model="ctrl.userData.password">
+            </div>
+          </div>
+
+          <div class="ui fluid large blue submit button" ng-click="ctrl.signIn()">Sign in</div>
+          <br>
+          <div class="ui fluid large blue submit button" ng-click="ctrl.signUp()">Sign up</div>
+        </div>
+
+  <!-- Needs Angular Form validation & fix to signin/signup functions -->
+        <div class="ui error message"></div>
+      </form>
+
+      <div class="ui message">
+        New to us? <a href="#">Sign Up</a>
       </div>
-    </h2>
-    <form class="ui large form">
-      <div class="ui stacked segment">
-
-        <div class="field">
-          <div class="ui left input">
-            <input type="text" name="name" placeholder="Full Name" ng-model="ctrl.userData.name">
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="ui left input">
-            <input type="text" name="username" placeholder="Username" ng-model="ctrl.userData.username">
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="ui left input">
-            <input type="password" name="password" placeholder="Password" ng-model="ctrl.userData.password">
-          </div>
-        </div>
-
-        <div class="ui fluid large blue submit button" ng-click="ctrl.signIn()">Sign in</div>
-      </div>
-
-<!-- Needs Angular Form validation & fix to signin/signup functions -->
-      <div class="ui error message"></div>
-    </form>
-
-    <div class="ui message">
-      New to us? <a href="#">Sign Up</a>
     </div>
   </div>
-</div>
 </div>
