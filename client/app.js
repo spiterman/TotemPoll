@@ -3,16 +3,13 @@ var app = angular.module("app", [
   'ui.bootstrap',
   'app.profile',
   'app.question',
-  'app.login'
+  'app.login',
+  'app.writeQuestion'
   ]);
 
-app.controller("mainController", function($scope){
-
-});
-
 app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider){
-  $urlRouterProvider.otherwise('/');
 
+  $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('profile', {
       templateUrl: 'components/profile/profile.html',
@@ -33,8 +30,12 @@ app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider
       templateUrl: 'components/login/login.html',
       controller: 'LoginController',
       url: '/login'
+    })
+    .state('writeQuestion', {
+      templateUrl: 'components/writeQuestion/writeQuestion.html',
+      controller: 'WriteQuestionController',
+      url: '/writeQuestion'
     });
-
 
 }]);
 
@@ -43,6 +44,6 @@ app.directive('testDirective', function(){
     restrict: 'E',
     templateUrl: 'components/custom_directives/test/test.html'
   }
-})
+});
 
 
