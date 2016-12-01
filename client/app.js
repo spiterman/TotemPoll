@@ -4,10 +4,14 @@ var app = angular.module("app", [
   'app.profile',
   'app.question',
   'app.login',
-  'app.writeQuestion'
+  'app.writeQuestion',
+  'LocalStorageModule'
   ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider){
+
+  localStorageServiceProvider
+  .setPrefix('testing');
 
   $urlRouterProvider.otherwise('/');
   $stateProvider
