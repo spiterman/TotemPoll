@@ -1,43 +1,50 @@
 <div class="container" ng-controller="LoginController as ctrl">
   <div class="ui middle aligned center aligned grid">
     <div class="column">
+
       <h2 class="ui blue image header">
         <div class="content">
-          Log-in to your account
+           {{ctrl.loginState.action}}
         </div>
       </h2>
-      <form class="ui large form">
+
+      <!-- Sign In / Sign Up form -->
+      <form class="ui large form" name="userForm" novalidate>
+
         <div class="ui stacked segment">
 
           <div class="field">
             <div class="ui left input">
-              <input type="text" name="name" placeholder="Full Name" ng-model="ctrl.userData.name">
+              <input type="text" name="name" placeholder="Full Name" ng-model="ctrl.userData.name" ng-hide="ctrl.loginState.action === 'Sign In'">
+            </div>
+          </div>
+
+          <div class="field form-group">
+            <div class="ui left input" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+              <input type="text" name="username" placeholder="Username" ng-model="ctrl.userData.username" required ng-minlength="6" ng-maxlength="20" class="form-control">
+<br>
+              <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+              <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
             </div>
           </div>
 
           <div class="field">
             <div class="ui left input">
-              <input type="text" name="username" placeholder="Username" ng-model="ctrl.userData.username">
+              <input type="password" name="password" placeholder="Password" ng-model="ctrl.userData.password" required>
             </div>
           </div>
 
-          <div class="field">
-            <div class="ui left input">
-              <input type="password" name="password" placeholder="Password" ng-model="ctrl.userData.password">
-            </div>
-          </div>
+          <button type="submit" class="ui fluid large blue submit button" ng-click="ctrl.loginState.fn()" ng-disabled="userForm.$invalid">{{ctrl.loginState.action}}</button>
 
-          <div class="ui fluid large blue submit button" ng-click="ctrl.signIn()">Sign in</div>
-          <br>
-          <div class="ui fluid large blue submit button" ng-click="ctrl.signUp()">Sign up</div>
         </div>
 
   <!-- Needs Angular Form validation & fix to signin/signup functions -->
         <div class="ui error message"></div>
+
       </form>
 
       <div class="ui message">
-        New to us? <a href="#">Sign Up</a>
+        {{ctrl.loginState.alternateMessage}}<a href="" ng-click="ctrl.toggleLoginState()"> {{ctrl.loginState.alternateAction}}</a>
       </div>
     </div>
   </div>
