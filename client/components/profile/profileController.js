@@ -14,6 +14,11 @@
           });
       };
 
+      vm.writeQuestion = function(){
+        console.log('this got calle')
+        ProfileFactory.writeQuestion();
+      }
+
       // Initialize Profile Page
       vm.getUser();
 

@@ -32,6 +32,10 @@
         });
       };
 
+      model.writeQuestion = function(){
+        $state.go('writeQuestion');
+      }
+
       return model;
 
     }]);
