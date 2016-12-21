@@ -13,10 +13,10 @@
         console.log('Sign Up Called')
         LoginFactory.signUp(vm.userData)
           .then(function(response){
-            console.log('got the response');
+            console.log('Signed Up');
             console.log(response.data.user.username);
             localStorageService.set('token', response.data.token);
-            $state.go('/profile/' + response.data.user.username);
+            $state.go('profile', {username: response.data.user.username});
           });
 
         // Reset names
@@ -27,7 +27,7 @@
       vm.signIn = function(){
         LoginFactory.signIn(vm.userData)
           .then(function(response){
-            console.log('signed in');
+            console.log('Signed In');
             console.log(response);
             localStorageService.set('token', response.data.token);
             $state.go('profile', {username: response.data.user.username});
