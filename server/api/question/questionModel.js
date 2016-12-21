@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var QuestionSchema = new Schema({
   writer: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: 'user'
   },
 
@@ -14,7 +14,12 @@ var QuestionSchema = new Schema({
     ref: 'category'
   }],
 
-  content: {
+  question: {
+    type: String,
+    required: true
+  },
+
+  description: {
     type: String,
     required: true
   }
