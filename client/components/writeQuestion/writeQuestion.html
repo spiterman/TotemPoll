@@ -1,6 +1,27 @@
-<div class="container">
-  <div class="ui fluid icon input">
-    <input type="text" placeholder="Search a very wide input...">
-    <i class="search icon"></i>
+<div class="container" ng-controller="WriteQuestionController as ctrl" class="container">
+
+  <div class="ui small form">
+
+    <div class="field">
+      <label>Question</label>
+      <input type="text" ng-model="ctrl.question">
+    </div>
+
+
+    <div class="field">
+      <label>Description</label>
+      <textarea ng-model="ctrl.description" rows="3" style="resize: none;"></textarea>
+    </div>
+
+  <br>
+
+    <div class="field">
+      <div class="ui one column centered grid">
+        <div>
+          <button class="ui green button" ng-click="ctrl.submitQuestion()">Submit</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
